@@ -82,7 +82,7 @@ def get_end_file(dir_path, end):
 if __name__ == "__main__":
     f0_dict = {}
     # 获取file_path文件夹下所有wav文件
-    file_path= "E:\code\DiffSinger\\test\\3"
+    file_path= ""
     wav_paths = get_end_file(file_path, "wav")
     # parselmouth获取f0
     with tqdm(total=len(wav_paths)) as p_bar:
@@ -104,6 +104,7 @@ if __name__ == "__main__":
     plt.plot(pitch_time.keys(), pitch_time.values(), color='dodgerblue')
 
     pitch_summary = os.path.join(file_path, 'pitch_distribution.png')
+    #不太好使
     plt.savefig(fname=pitch_summary,
                 dpi=1000,
                 bbox_inches='tight',
